@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Application - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/courseApplication.css" />
+  <link rel="stylesheet" href="../CSS/notifications.css">
+</head>
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo" />
+    <nav>
+      <a href="/HTML/AllCourses.html"><button class="btn">All Courses</button></a>
+      <input type="text" placeholder="Search" class="searchbar" />
+      <a href="/HTML/report.html"><button class="btn2">Report</button></a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell" /></a>
+      <a href="/HTML/login.html" class="btn1">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="applicationForm">
+      <h2 id="courseTitle"></h2>
+      <h1>General Information</h1>
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+
+      <h4>Gender</h4>
+      <div class="gender">
+        <label><input type="radio" name="gender" value="male" required /> Male</label>
+        <label><input type="radio" name="gender" value="female" required /> Female</label>
+        <label><input type="radio" name="gender" value="non_binary" required /> Non-Binary</label>
+        <label><input type="radio" name="gender" value="others" required /> Prefer not to say</label>
+      </div>
+
+      <h4>Date Of Birth</h4>
+      <div class="dob">
+        <select name="month" class="dob-dropdown" required>
+          <option value="">Month</option>
+          <option>January</option><option>February</option><option>March</option><option>April</option>
+          <option>May</option><option>June</option><option>July</option><option>August</option>
+          <option>September</option><option>October</option><option>November</option><option>December</option>
+        </select>
+        <select name="day" class="dob-dropdown" id="day" required><option value="">Day</option></select>
+        <select name="year" class="dob-dropdown" id="year" required><option value="">Year</option></select>
+      </div>
+
+      <h4>Location</h4>
+      <div class="dob">
+        <select name="country" id="country" class="dob-dropdown" required><option value="">Select Country</option></select>
+        <select name="state" id="state" class="dob-dropdown" required><option value="">Select State</option></select>
+        <select name="city" id="city" class="dob-dropdown" required><option value="">Select City</option></select>
+      </div>
+
+      <h1>Educational Qualification</h1>
+      <select class="dob-dropdown" id="qualification" required>
+        <option value="">Select Qualification</option>
+        <option>Bachelor</option><option>Master</option><option>Post Graduate</option><option>Others</option>
+      </select>
+      <select class="dob-dropdown" id="field" required>
+        <option value="">Select Field</option>
+        <option>Computer Science</option><option>Business</option><option>Engineering</option><option>Others</option>
+      </select>
+      <input type="text" id="university" placeholder="University" required />
+      <input type="number" id="gradYear" placeholder="Graduation Year" required />
+      <input type="text" id="gpa" placeholder="GPA or Percentage" required />
+
+      <h1>Professional Experience</h1>
+      <select class="dob-dropdown" id="experience" required>
+        <option value="">Select Experience</option>
+        <option>0-1</option><option>1-3</option><option>3-5</option><option>5-10</option><option>10+</option>
+      </select>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </main>
+
+  <footer><p>&copy; Gradious All Rights Reserved</p></footer>
+  <script src="../JS/courseApplication.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

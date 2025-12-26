@@ -1,0 +1,255 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn, .btn1,.btn2,.notif  {
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+}
+.btn2 {
+  background-color: white;
+  color: black;
+  border: none;
+}
+.btn1 {
+  background-color: #1025a1;
+  color: white;
+  text-decoration:none;
+  border: none;
+}
+.bell{
+  width: 25px;
+  height:25px;
+}
+
+.btn2:hover {
+   background-color: #1025a1;
+   color: white;
+}
+
+.searchbar {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 290px;
+}
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f9fc;
+  color: #1025a1;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+/* Main Content Styles */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slideimg {
+  width: 112%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.selection{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+.select{
+    height: 30px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0px 4px;
+    cursor: pointer;
+}
+.course-cards {
+  flex: 1;
+  margin-top: 80px;
+}
+
+.cards-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 40px;
+}
+.cards-row-hidden{
+    display: none;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.course-card h4{
+  margin-bottom : 80px;
+}
+.course-card p{
+  margin-top: -20px;
+}
+
+.course-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.load-more-btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 120px;
+  margin: 40px 0px 10px 550px;
+}
+
+.chatbutton {
+  position: fixed;
+  padding: 8px;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 4%;
+  left: 94%;
+  margin-top: 115px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1025a1;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  color: white;
+}

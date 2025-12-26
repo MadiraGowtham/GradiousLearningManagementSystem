@@ -1,0 +1,258 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn,
+.btn1,
+.notif,
+.btn2 {
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+}
+
+.btn1 {
+  color: #333;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+}
+
+.bell {
+  width: 25px;
+  height: 25px;
+}
+
+.btn1:hover {
+  background-color: #1025a1;
+  color: white;
+}
+
+
+
+.searchbar {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 290px;
+}
+
+main {
+  display: flex;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 710px;
+  overflow-y: auto;
+  border-right: 4px solid #1025a1;
+  padding: 20px 20px;
+  gap: 25px;
+  background-color: #1025a1;
+}
+
+.filter {
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+  appearance: none;
+  max-width: 250px;
+}
+
+.filter:hover {
+  border-color: #999;
+  background-color: #f1f1f1;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(241, 239, 239, 0.2);
+  cursor: pointer;
+  z-index: 1;
+  background-color: white;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.details p {
+  margin-top: -20px;
+}
+
+.img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.chat {
+  width: 70%;
+  height: 740px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#chat-details {
+  margin-left: -470px;
+}
+
+.reply {
+  padding: 0px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.reply input {
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.btn2 {
+  background-color: white;
+  color: black;
+  border: none;
+  text-decoration: none;
+}
+.btn2:hover {
+   background-color: #1025a1;
+   color: white;
+}
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Keep dropdown open when hovering over it */
+.dropdown-content:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f9fc;
+  color: #1025a1;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/adminIndex.css">
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header role="banner" class="sticky-header">
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+    <nav aria-label="Main navigation">
+      <a href="/HTML/users.html"><button class="btn">Users</button></a>
+      <a href="/HTML/activity.html"><button class="btn1">Activity</button></a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell"></a>
+      <div id="profileOrLogin"></div>
+    </nav>
+  </header>
+  <main>
+    <section class="dashboard-header" aria-label="Dashboard Overview">
+      <h1 class="dashboard-title">Admin Dashboard</h1>
+      <p class="dashboard-subtitle">Welcome, <span id="adminName">Admin</span>! Here’s an overview of platform activity and issues.</p>
+    </section>
+    <section class="dataAnalysis card-section" aria-label="Data Analysis">
+      <div class="chartContainer card">
+        <div class="loading-indicator" id="pieChartLoading">Loading chart...</div>
+        <canvas id="studentDistBarChart" aria-label="Student Distribution by Course (Bar Chart)"></canvas>
+      </div>
+    </section>
+    <section class="updates card-section" aria-label="Today's Activity">
+      <div class="updateContainer card">
+        <h3 class="title">Today's Activity</h3>
+        <div class="loading-indicator" id="barChartLoading">Loading activity...</div>
+        <canvas id="updateChart" aria-label="Today's Activity Bar Chart"></canvas>
+      </div>
+    </section>
+    <section class="issues card-section" aria-label="Issues and Alerts">
+      <div class="card">
+        <h3 class="title">Issues/Alerts</h3>
+        <div class="loading-indicator" id="issuesLoading">Loading issues...</div>
+        <div id="issuesList"></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../JS/adminIndex.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

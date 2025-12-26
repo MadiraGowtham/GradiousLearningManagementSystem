@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Course - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/teacherCourse.css" />
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo" />
+    <nav>
+      <input type="text" placeholder="Search" class="searchbar" />
+      <a href="/HTML/messages.html"><button class="btn1">Messages</button></a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell" /></a>
+      <a href="/HTML/login.html" class="btn1" id="loginButton">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-details">
+      <div class="course-info">
+        <h1 id="dynamic-course-title" class="course-title"></h1>
+        <p id="dynamic-course-desc" class="course-desc"></p>
+        <p id="dynamic-course-duration" class="course-duration"></p>
+      </div>
+      <img id="dynamic-course-img" alt="Course Image" class="course-image" />
+    </section>
+
+    <section class="work">
+      <div class="section">
+        <a href="#quiz">Quiz</a>
+        <a href="#sessions">Video Sessions</a>
+        <a href="#resources">Resources</a>
+        <a href="#assignments">Assignments</a>
+      </div>
+      <div class="container">
+        <!-- Quiz Section -->
+        <div class="quiz-list" id="quiz">
+          <div class="quiz-header">
+            <h2>QUIZ</h2>
+            <div class="quiz-controls">
+              <input type="text" id="quizSearch" placeholder="Search quizzes..." class="search-input">
+              <button id="addQuizBtn" class="btn-create"><i class="fas fa-plus"></i> Add Quiz</button>
+            </div>
+          </div>
+          <div class="quiz-stats" id="quizStats"></div>
+          <div class="quiz-container" id="quizContainer"></div>
+        </div>
+        <!-- Sessions Section -->
+        <div class="quiz-list" id="sessions">
+          <div class="session-header">
+            <h2>VIDEO SESSIONS</h2>
+            <div class="session-controls">
+              <button id="addSessionBtn" class="btn-create"><i class="fas fa-plus"></i> Add Session</button>
+            </div>
+          </div>
+          <div class="session-container" id="sessionContainer"></div>
+        </div>
+        <!-- Resources Section -->
+        <div class="quiz-list" id="resources">
+          <div class="resource-header">
+            <h2>RESOURCES</h2>
+            <div class="resource-controls">
+              <button id="addResourceBtn" class="btn-create"><i class="fas fa-plus"></i> Add Resource</button>
+            </div>
+          </div>
+          <div class="resource-container" id="resourceContainer"></div>
+        </div>
+        <!-- Assignments Section -->
+        <div class="quiz-list" id="assignments">
+          <div class="assignment-header">
+            <h2>ASSIGNMENTS</h2>
+            <div class="assignment-controls">
+              <input type="text" id="assignmentSearch" placeholder="Search assignments..." class="search-input">
+              <button id="addAssignmentBtn" class="btn-create"><i class="fas fa-plus"></i> Add Assignment</button>
+            </div>
+          </div>
+          <div class="assignment-stats-row" id="assignmentStats"></div>
+          <div class="assignment-container" id="assignmentContainer"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="loadingOverlay" class="loading-overlay" style="display:none" aria-live="polite" aria-label="Loading">
+    <div class="spinner"></div>
+    <div>Loading...</div>
+  </div>
+  <div id="errorOverlay" class="error-overlay" style="display:none" aria-live="assertive" aria-label="Error">
+    <div class="error-state" id="errorState">
+      <span class="popup-icon" id="popupIcon">&#9888;</span>
+      <h3 id="errorOverlayTitle">Error</h3>
+      <p id="errorOverlayMsg">Something went wrong. Please try again.</p>
+    </div>
+  </div>
+
+  <!-- CRUD MODALS (ALWAYS PRESENT) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeQuizEditModal()">&times;</span>
+      <h3 id="modal-title">Manage Content</h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+  <script src="../JS/teacherCourse.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

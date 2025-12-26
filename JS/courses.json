@@ -1,0 +1,202 @@
+[
+  {
+    "id": "ml001",
+    "title": "Machine Learning by Microsoft",
+    "domain": "Machine Learning",
+    "coordinator": "Microsoft",
+    "level": "Beginner",
+    "duration": "12 weeks",
+    "startDate": "20th June 2025",
+    "img": "../images/MachineLearning.jpeg"
+  },
+  {
+    "id": "da002",
+    "title": "Data Analytics by Google",
+    "domain": "Data Analytics",
+    "coordinator": "Google",
+    "level": "Intermediate",
+    "duration": "10 weeks",
+    "startDate": "6th June 2025",
+    "img": "../images/DataAnalytics.jpeg"
+  },
+  {
+    "id": "se003",
+    "title": "Software Engineering by IBM",
+    "domain": "Software Engineering",
+    "coordinator": "IBM",
+    "level": "Advanced",
+    "duration": "12 weeks",
+    "startDate": "2nd June 2025",
+    "img": "../images/SE.jpeg"
+  },
+  {
+    "id": "fsd004",
+    "title": "Full Stack Development by IIT Kharagpur",
+    "domain": "Full Stack Development",
+    "coordinator": "IIT Kharagpur",
+    "level": "Intermediate",
+    "duration": "18 weeks",
+    "startDate": "8th June 2025",
+    "img": "../images/FSD.jpeg"
+  },
+  {
+    "id": "dev005",
+    "title": "Introduction to DevOps by Infosys",
+    "domain": "DevOps",
+    "coordinator": "Infosys",
+    "level": "Beginner",
+    "duration": "12 weeks",
+    "startDate": "22nd June 2025",
+    "img": "../images/DevOps.jpeg"
+  },
+  {
+    "id": "ux006",
+    "title": "UI/UX Designing by TCS",
+    "domain": "UI/UX Designing",
+    "coordinator": "TCS",
+    "level": "Beginner",
+    "duration": "6 weeks",
+    "startDate": "20th June 2025",
+    "img": "../images/UI:UX.jpeg"
+  },
+  {
+    "id": "ml007",
+    "title": "AI & ML by Amazon",
+    "domain": "Machine Learning",
+    "coordinator": "Amazon",
+    "level": "Advanced",
+    "duration": "10 weeks",
+    "startDate": "18th June 2025",
+    "img": "../images/MachineLearning.jpeg"
+  },
+  {
+    "id": "da008",
+    "title": "Python Data Analytics by IBM",
+    "domain": "Data Analytics",
+    "coordinator": "IBM",
+    "level": "Beginner",
+    "duration": "6 weeks",
+    "startDate": "10th June 2025",
+    "img": "../images/DataAnalytics.jpeg"
+  },
+  {
+    "id": "se009",
+    "title": "UML and Software Architecture",
+    "domain": "Software Engineering",
+    "coordinator": "Infosys",
+    "level": "Intermediate",
+    "duration": "8 weeks",
+    "startDate": "16th June 2025",
+    "img": "../images/SE.jpeg"
+  },
+  {
+    "id": "fsd010",
+    "title": "Full Stack with React & Node",
+    "domain": "Full Stack Development",
+    "coordinator": "Google",
+    "level": "Advanced",
+    "duration": "12 weeks",
+    "startDate": "12th June 2025",
+    "img": "../images/FSD.jpeg"
+  },
+  {
+    "id": "dev011",
+    "title": "AWS DevOps Toolkit",
+    "domain": "DevOps",
+    "coordinator": "Amazon",
+    "level": "Intermediate",
+    "duration": "4 weeks",
+    "startDate": "15th June 2025",
+    "img": "../images/DevOps.jpeg"
+  },
+  {
+    "id": "ux012",
+    "title": "UI for Mobile Apps",
+    "domain": "UI/UX Designing",
+    "coordinator": "TCS",
+    "level": "Beginner",
+    "duration": "8 weeks",
+    "startDate": "19th June 2025",
+    "img": "../images/UI:UX.jpeg"
+  },
+  {
+    "id": "ml013",
+    "title": "Deep Learning Foundations",
+    "domain": "Machine Learning",
+    "coordinator": "Microsoft",
+    "level": "Advanced",
+    "duration": "14 weeks",
+    "startDate": "25th June 2025",
+    "img": "../images/MachineLearning.jpeg"
+  },
+  {
+    "id": "da014",
+    "title": "Advanced Data Wrangling",
+    "domain": "Data Analytics",
+    "coordinator": "Amazon",
+    "level": "Advanced",
+    "duration": "6 weeks",
+    "startDate": "28th June 2025",
+    "img": "../images/DataAnalytics.jpeg"
+  },
+  {
+    "id": "se015",
+    "title": "SE with Agile and Scrum",
+    "domain": "Software Engineering",
+    "coordinator": "Microsoft",
+    "level": "Intermediate",
+    "duration": "10 weeks",
+    "startDate": "26th June 2025",
+    "img": "../images/SE.jpeg"
+  },
+  {
+    "id": "fsd016",
+    "title": "NodeJS Full Stack",
+    "domain": "Full Stack Development",
+    "coordinator": "TCS",
+    "level": "Beginner",
+    "duration": "7 weeks",
+    "startDate": "29th June 2025",
+    "img": "../images/FSD.jpeg"
+  },
+  {
+    "id": "dev017",
+    "title": "Cloud-native DevOps",
+    "domain": "DevOps",
+    "coordinator": "Google",
+    "level": "Advanced",
+    "duration": "10 weeks",
+    "startDate": "27th June 2025",
+    "img": "../images/DevOps.jpeg"
+  },
+  {
+    "id": "ux018",
+    "title": "UX Research Basics",
+    "domain": "UI/UX Designing",
+    "coordinator": "IBM",
+    "level": "Intermediate",
+    "duration": "4 weeks",
+    "startDate": "30th June 2025",
+    "img": "../images/UI:UX.jpeg"
+  },
+  {
+    "id": "ml019",
+    "title": "Neural Networks Simplified",
+    "domain": "Machine Learning",
+    "coordinator": "IIT Kharagpur",
+    "level": "Beginner",
+    "duration": "8 weeks",
+    "startDate": "21st June 2025",
+    "img": "../images/MachineLearning.jpeg"
+  },
+  {
+    "id": "da020",
+    "title": "Data Visualization with Python",
+    "domain": "Data Analytics",
+    "coordinator": "TCS",
+    "level": "Intermediate",
+    "duration": "6 weeks",
+    "startDate": "23rd June 2025",
+    "img": "../images/DataAnalytics.jpeg"
+  }
+]

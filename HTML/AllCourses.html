@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Management System - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/AllCourses.css">
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  
+</head>
+
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+    <nav>
+      <a href="/HTML/AllCourses.html">
+        <button class="btn">All Courses</button>
+      </a>
+      <input type="text" placeholder="Search" class="searchbar">
+      <a href="/HTML/report.html">
+      <button class="btn2">Report</button>
+    </a>
+      <a href="/HTML/messages.html">
+      <button class="btn2">Message</button>
+    </a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell"></a>
+      <a href="/HTML/login.html">
+      <button class="btn1">Login</button>
+    </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slideshow">
+      <img src="../images/slideshow2.png" alt="Slideshow" class="slideimg">
+    </section>
+    <a href="#">
+    </a>
+    <section class="selection">
+      <select class="select" required>
+        <option value="" selected>Select Course Title</option>
+        <option value="Machine Learning">Machine Learning</option>
+        <option value="Data Analytics">Data Analytics</option>
+        <option value="Software Engineering">Software Engineering</option>
+        <option value="Full Stack Development">Full Stack Development</option>
+        <option value="DevOps">DevOps</option>
+        <option value="UI/UX Designing">UI/UX Designing</option>
+      </select>
+      <select class="select" required>
+        <option value="" selected>Select Coordinator</option>
+        <option value="Google">Google</option>
+        <option value="Microsoft">Microsoft</option>
+        <option value="IBM">IBM</option>
+        <option value="IIT Kharagpur">IIT Kharagpur</option>
+        <option value="Infosys">Infosys</option>
+        <option value="TCS">TCS</option>
+        <option value="Amazon">Amazon</option>
+      </select>
+      <select class="select" required>
+        <option value="" selected>Select Course Level</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+      <select class="select" required>
+        <option value="" selected>Select Course Duration</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="4 weeks">4 weeks</option>
+        <option value="6 weeks">6 weeks</option>
+        <option value="8 weeks">8 weeks</option>
+        <option value="10 weeks">10 weeks</option>
+        <option value="12 weeks">12 weeks</option>
+        <option value="14 weeks">14 weeks</option>
+        <option value="18 weeks">18 weeks</option>
+      </select>
+    </section>
+    <section class="course-cards">
+      <!-- Dynamic course cards will be rendered here via JS -->
+    </section>
+    <button class="load-more-btn">Load More</button>
+  </main>
+
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+  <script src="../JS/AllCourses.js"></script>
+  <script src="../JS/notifications.js"></script>
+  
+</body>
+
+</html>

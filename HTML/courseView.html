@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Management System - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/courseView.css" />
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  
+</head>
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo" />
+    <nav>
+      <a href="/HTML/AllCourses.html"><button class="btn">All Courses</button></a>
+      <input type="text" placeholder="Search" class="searchbar" />
+      <a href="/HTML/messages.html"><button class="btn">Messages</button></a>
+      <a href="/HTML/report.html"><button class="btn">Report</button></a>
+      <a href="/HTML/profile.html" class="btn1">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-details">
+      <div class="course-info">
+        <h1 id="courseTitle">Course Title</h1>
+        <p class="desc" id="courseDescription">Course description will appear here.</p>
+        <div class="course-meta">
+          <p class="duration" id="courseDuration">Duration</p>
+          <p class="price" id="coursePrice">Price</p>
+          <p class="level" id="courseLevel">Level</p>
+          <p class="enrolled" id="courseEnrolled">Students Enrolled</p>
+        </div>
+        <div class="enrollment-section">
+          <a href="/HTML/courseApplication.html" id="enrollButton">
+            <button class="btn enroll-btn">Enroll Now</button>
+          </a>
+          <div class="course-status" id="courseStatus"></div>
+        </div>
+      </div>
+      <img src="" alt="Course Image" class="course-image" id="courseImage" />
+    </section>
+
+    <section class="overview">
+      <div class="Syllabus">
+        <h2 class="name">Syllabus</h2>
+        <ol class="syllabus-list" id="syllabusList">
+          <!-- JS will populate syllabus here -->
+        </ol>
+      </div>
+
+      <div class="completion">
+        <h2 class="name">Overview</h2>
+        <div class="overview-content" id="overviewContent">
+          <!-- JS will populate overview here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunities">
+      <h2 class="name">Career Opportunities</h2>
+      <div class="container" id="opportunitiesContainer">
+        <!-- JS will populate opportunities here -->
+      </div>
+    </section>
+
+    <section class="enquiry">
+      <h2 class="name">Enquire Now</h2>
+      <div class="message">
+        <form id="enquiryForm">
+          <input type="text" placeholder="Name" id="enquiryName" required />
+          <input type="email" placeholder="Email" id="enquiryEmail" required />
+          <input type="tel" placeholder="Phone" id="enquiryPhone" required />
+          <button type="submit" class="btn submit-btn">Submit Enquiry</button>
+        </form>
+        <textarea placeholder="Message" class="message-input" id="enquiryMessage" required></textarea>
+      </div>
+    </section>
+
+    <!-- Loading and Error States -->
+    <div id="loadingState" class="loading-state" style="display: none;">
+      <div class="spinner"></div>
+      <p>Loading course details...</p>
+    </div>
+
+    <div id="errorState" class="error-state" style="display: none;">
+      <h2>Error Loading Course</h2>
+      <p id="errorMessage"></p>
+      <a href="/HTML/AllCourses.html" class="btn">Back to Courses</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+
+  <script src="../JS/courseView.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

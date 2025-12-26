@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnEdge - Assignments</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+  <link rel="stylesheet" href="../CSS/assignment.css">
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+    <nav>
+      <a href="/HTML/AllCourses.html">
+        <button class="btn">All Courses</button>
+      </a>
+      <input type="text" placeholder="Search assignments..." class="searchbar" id="assignmentSearch">
+      <a href="/HTML/report.html">
+        <button class="btn2">Report</button>
+      </a>
+      <a href="/HTML/messages.html">
+        <button class="btn2">Message</button>
+      </a>
+      <a href="#notifications" class="notif">
+        <img src="../images/bell.png" alt="Notifications" class="bell">
+        <span class="notification-count" id="notificationCount">0</span>
+      </a>
+      <div class="profile-dropdown">
+        <button class="profile-btn" id="profileBtn">
+          <i class="fas fa-user"></i> Profile
+        </button>
+        <div class="dropdown-content">
+          <a href="/HTML/profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
+          <a href="/HTML/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="assignment-container">
+      <!-- Role Display -->
+      <div class="role-display">
+        <div class="role-badge" id="roleBadge">
+          <i class="fas fa-user-graduate"></i> Student View
+        </div>
+      </div>
+
+      <!-- Student View -->
+      <div class="view-section" id="studentView">
+        <div class="assignment-header">
+          <h1><i class="fas fa-tasks"></i> My Assignments</h1>
+          <div class="assignment-stats">
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <span class="stat-number" id="completedCount">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-clock"></i>
+              <span class="stat-number" id="pendingCount">0</span>
+              <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span class="stat-number" id="overdueCount">0</span>
+              <span class="stat-label">Overdue</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <select id="courseFilter" class="filter-select">
+            <option value="">All Courses</option>
+          </select>
+          <select id="statusFilter" class="filter-select">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="overdue">Overdue</option>
+          </select>
+          <button class="btn" id="refreshBtn">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+        </div>
+
+        <div class="assignments-grid" id="studentAssignmentsGrid">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+
+      <!-- Teacher View -->
+      <div class="view-section hidden" id="teacherView">
+        <div class="assignment-header">
+          <h1><i class="fas fa-chalkboard-teacher"></i> Assignment Management</h1>
+          <button class="btn" id="createAssignmentBtn">
+            <i class="fas fa-plus"></i> Create Assignment
+          </button>
+        </div>
+
+        <div class="teacher-stats">
+          <div class="stat-card">
+            <i class="fas fa-file-alt"></i>
+            <span class="stat-number" id="totalAssignments">0</span>
+            <span class="stat-label">Total Assignments</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <span class="stat-number" id="totalStudents">0</span>
+            <span class="stat-label">Students</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-star"></i>
+            <span class="stat-number" id="avgScore">0</span>
+            <span class="stat-label">Avg Score</span>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <select id="teacherCourseFilter" class="filter-select">
+            <option value="">All Courses</option>
+          </select>
+          <select id="teacherStatusFilter" class="filter-select">
+            <option value="">All Status</option>
+            <option value="submitted">Submitted</option>
+            <option value="graded">Graded</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <div class="submissions-container" id="teacherSubmissionsContainer">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Assignment Submission Modal -->
+  <div class="modal" id="submissionModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-upload"></i> Submit Assignment</h2>
+        <span class="close" id="closeSubmissionModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="assignment-info">
+          <h3 id="modalAssignmentTitle"></h3>
+          <p id="modalAssignmentInstructions"></p>
+          <p><strong>Due Date:</strong> <span id="modalDueDate"></span></p>
+        </div>
+        <form id="submissionForm">
+          <div class="form-group">
+            <label for="submissionFile">Upload Assignment File:</label>
+            <input type="file" id="submissionFile" accept=".pdf,.doc,.docx,.txt,.zip,.rar" required>
+            <small>Accepted formats: PDF, DOC, DOCX, TXT, ZIP, RAR (Max 10MB)</small>
+          </div>
+          <div class="form-group">
+            <label for="submissionNotes">Additional Notes (Optional):</label>
+            <textarea id="submissionNotes" rows="4" placeholder="Add any additional comments or notes..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn2" id="cancelSubmission">Cancel</button>
+            <button type="submit" class="btn">Submit Assignment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Assignment Modal -->
+  <div class="modal" id="createAssignmentModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-plus"></i> Create New Assignment</h2>
+        <span class="close" id="closeCreateModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="createAssignmentForm">
+          <div class="form-group">
+            <label for="assignmentTitle">Assignment Title:</label>
+            <input type="text" id="assignmentTitle" required>
+          </div>
+          <div class="form-group">
+            <label for="assignmentCourse">Course:</label>
+            <select id="assignmentCourse" required>
+              <option value="">Select Course</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="assignmentInstructions">Instructions:</label>
+            <textarea id="assignmentInstructions" rows="6" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="assignmentDueDate">Due Date:</label>
+              <input type="datetime-local" id="assignmentDueDate" required>
+            </div>
+            <div class="form-group">
+              <label for="assignmentMaxScore">Maximum Score:</label>
+              <input type="number" id="assignmentMaxScore" min="1" max="100" value="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="assignmentFile">Assignment File (Optional):</label>
+            <input type="file" id="assignmentFile" accept=".pdf,.doc,.docx,.txt,.zip,.rar">
+            <small>Upload assignment materials or resources</small>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn2" id="cancelCreate">Cancel</button>
+            <button type="submit" class="btn">Create Assignment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grade Assignment Modal -->
+  <div class="modal" id="gradeModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-star"></i> Grade Assignment</h2>
+        <span class="close" id="closeGradeModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="submission-details">
+          <h3 id="gradeStudentName"></h3>
+          <p><strong>Assignment:</strong> <span id="gradeAssignmentTitle"></span></p>
+          <p><strong>Submitted:</strong> <span id="gradeSubmissionDate"></span></p>
+          <div class="submission-files">
+            <h4>Submitted Files:</h4>
+            <div id="gradeSubmissionFiles"></div>
+          </div>
+          <div class="submission-notes">
+            <h4>Student Notes:</h4>
+            <p id="gradeStudentNotes"></p>
+          </div>
+        </div>
+        <form id="gradeForm">
+          <div class="form-group">
+            <label for="gradeScore">Score:</label>
+            <input type="number" id="gradeScore" min="0" max="100" required>
+            <span>/ <span id="maxScore">100</span></span>
+          </div>
+          <div class="form-group">
+            <label for="gradeFeedback">Feedback:</label>
+            <textarea id="gradeFeedback" rows="6" placeholder="Provide detailed feedback to the student..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn2" id="cancelGrade">Cancel</button>
+            <button type="submit" class="btn">Submit Grade</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assignment Details Modal -->
+  <div class="modal" id="assignmentDetailsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-info-circle"></i> Assignment Details</h2>
+        <span class="close" id="closeDetailsModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div id="assignmentDetailsContent">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+
+  <script src="../JS/assignment.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html> 

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "ml001",
+    "title": "Introduction to Machine Learning",
+    "provider": "Microsoft",
+    "description": "This Introduction to Machine Learning course provides a foundational understanding of key concepts, algorithms, and applications of machine learning (ML). Designed for beginners, this course covers supervised, unsupervised, and reinforcement learning techniques, along with hands-on exercises to build and evaluate ML models.",
+    "duration": "12 Weeks",
+    "price": "₹1200",
+    "image": "../images/MachineLearning.jpeg",
+    "companyLogo": "../images/Microsoft.png",
+    "syllabus": [
+      { "title": "Foundations", "topics": ["Overview", "ML History", "Key Concepts"] },
+      { "title": "Supervised Learning", "topics": ["Regression", "Classification", "Metrics"] },
+      { "title": "Unsupervised Learning", "topics": ["Clustering", "Dimensionality Reduction"] }
+    ],
+    "overview": {
+      "Knowledge": ["Understand ML principles", "Evaluate models"],
+      "Tools": ["Azure ML", "Python"]
+    },
+    "opportunities": [
+      { "title": "ML Engineer", "description": "Deploy ML models.", "image": "../images/machine-learning-engineer.jpeg" },
+      { "title": "Data Scientist", "description": "Analyze data.", "image": "../images/datascientist.jpeg" }
+    ]
+  },
+  {
+    "id": "da002",
+    "title": "Data Analytics by Google",
+    "provider": "Google",
+    "description": "Master data analytics with Google's expert-designed course covering Excel, SQL, and dashboards.",
+    "duration": "10 Weeks",
+    "price": "₹1000",
+    "image": "../images/DataAnalytics.jpeg",
+    "companyLogo": "../images/Google.png",
+    "syllabus": [
+      { "title": "Data Basics", "topics": ["Types of data", "Data cleaning"] },
+      { "title": "Tools", "topics": ["Excel", "Google Sheets"] },
+      { "title": "SQL", "topics": ["Queries", "Joins"] }
+    ],
+    "overview": {
+      "Skills": ["Wrangle and clean data", "Build dashboards"],
+      "Certifications": ["Google career certificate"]
+    },
+    "opportunities": [
+      { "title": "Data Analyst", "description": "Work with business data.", "image": "../images/dataengineer.jpeg" },
+      { "title": "Business Intelligence Analyst", "description": "Visualize and report insights.", "image": "../images/bussinessanalyst.jpeg" }
+    ]
+  },
+  {
+    "id": "se003",
+    "title": "Software Engineering by IBM",
+    "provider": "IBM",
+    "description": "Comprehensive course covering software development lifecycle, design patterns, and testing.",
+    "duration": "12 Weeks",
+    "price": "₹1500",
+    "image": "../images/SE.jpeg",
+    "companyLogo": "../images/IBM.jpeg",
+    "syllabus": [
+      { "title": "Development Lifecycle", "topics": ["Agile", "Scrum"] },
+      { "title": "Design Patterns", "topics": ["OOP", "MVC"] },
+      { "title": "Testing", "topics": ["Unit testing", "CI/CD"] }
+    ],
+    "overview": {
+      "Frameworks": ["Spring Boot", "JUnit"],
+      "Practices": ["Version control", "Dev workflows"]
+    },
+    "opportunities": [
+      { "title": "Software Developer", "description": "Build enterprise apps.", "image": "../images/dataengineer.jpeg" },
+      { "title": "QA Tester", "description": "Ensure software quality.", "image": "../images/Consultant.jpeg" }
+    ]
+  },
+  {
+    "id": "fsd004",
+    "title": "Full Stack Development by IIT Kharagpur",
+    "provider": "IIT Kharagpur",
+    "description": "End-to-end web development training including front-end, back-end, and deployment.",
+    "duration": "18 Weeks",
+    "price": "₹2000",
+    "image": "../images/FSD.jpeg",
+    "companyLogo": "../images/IITK.png",
+    "syllabus": [
+      { "title": "Frontend", "topics": ["HTML", "CSS", "JavaScript"] },
+      { "title": "Backend", "topics": ["Node.js", "Express"] },
+      { "title": "Database", "topics": ["MongoDB"] }
+    ],
+    "overview": {
+      "Stack": ["MERN", "REST APIs"],
+      "Deployment": ["Netlify", "Render"]
+    },
+    "opportunities": [
+      { "title": "Full Stack Developer", "description": "Work on both frontend and backend.", "image": "../images/FSD.jpeg" },
+      { "title": "Frontend Engineer", "description": "Build user interfaces.", "image": "../images/UI:UX.jpeg" }
+    ]
+  },
+  {
+    "id": "ux006",
+    "title": "UI/UX Designing by TCS",
+    "provider": "TCS",
+    "description": "Learn to design intuitive user experiences and stunning interfaces for mobile and web.",
+    "duration": "6 Weeks",
+    "price": "₹900",
+    "image": "../images/UI:UX.jpeg",
+    "companyLogo": "../images/TCS.png",
+    "syllabus": [
+      { "title": "Design Basics", "topics": ["Typography", "Color theory"] },
+      { "title": "User Research", "topics": ["Personas", "Wireframes"] },
+      { "title": "Prototyping", "topics": ["Figma", "Usability testing"] }
+    ],
+    "overview": {
+      "Principles": ["User-centered design", "Accessibility"],
+      "Tools": ["Figma", "Adobe XD"]
+    },
+    "opportunities": [
+      { "title": "UI Designer", "description": "Design interfaces.", "image": "../images/UI:UX.jpeg" },
+      { "title": "UX Researcher", "description": "Study user behavior.", "image": "../images/Researcher.jpeg" }
+    ]
+  },
+  {
+    "id": "dev007",
+    "title": "Introduction to DevOps: Principles and Practices By Infosys",
+    "provider": "Infosys",
+    "description": "Understand the DevOps lifecycle, CI/CD pipelines, automation tools, and cloud deployment.",
+    "duration": "12 Weeks",
+    "price": "₹1300",
+    "image": "../images/DevOps.jpeg",
+    "companyLogo": "../images/Infosys.png",
+    "syllabus": [
+      { "title": "DevOps Basics", "topics": ["Agile", "Scrum", "Automation"] },
+      { "title": "CI/CD", "topics": ["Jenkins", "GitHub Actions"] },
+      { "title": "Cloud Integration", "topics": ["AWS", "Docker"] }
+    ],
+    "overview": {
+      "Workflows": ["Continuous integration", "Deployment"],
+      "Tools": ["Docker", "Kubernetes"]
+    },
+    "opportunities": [
+      { "title": "DevOps Engineer", "description": "Automate infrastructure and deployment.", "image": "../images/DevOps.jpeg" },
+      { "title": "Site Reliability Engineer", "description": "Maintain scalable systems.", "image": "../images/Consultant.jpeg" }
+    ]
+  }
+]

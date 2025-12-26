@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link rel="stylesheet" href="../CSS/mycourses.css">
+    <link rel="stylesheet" href="../CSS/notifications.css">
+</head>
+
+<body>
+    <header>
+        <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+        <nav>
+            <a href="/HTML/mycourses.html">
+                <button class="btn">My Courses</button>
+            </a>
+            <input type="text" placeholder="Search" class="searchbar">
+            <a href="/HTML/messages.html">
+                <button class="btn1">Messages</button>
+            </a>
+            <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell"></a>
+            <a href="/HTML/login.html" class="btn1" id="loginButton">Login</a>
+        </nav>
+    </header>
+    <main>
+        <div class="header-section">
+            <h1>My Courses</h1>
+            <a href="/HTML/teacherIndex.html" class="back-btn">← Back to Dashboard</a>
+        </div>
+        <div id="coursesContainer">
+            <!-- Courses will be loaded dynamically here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Gradious All Rights Reserved</p>
+    </footer>
+
+    <script src="../JS/mycourses.js"></script>
+    <script src="../JS/notifications.js"></script>
+</body>
+
+</html>

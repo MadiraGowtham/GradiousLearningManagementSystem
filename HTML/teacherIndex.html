@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - LearnEdge LMS</title>
+    <link rel="stylesheet" href="../CSS/teacherIndex.css">
+    <link rel="stylesheet" href="../CSS/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <header>
+        <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+        <nav>
+            <input type="text" placeholder="Search" class="searchbar" id="searchInput">
+            <a href="/HTML/messages.html">
+                <button class="btn1">Messages</button>
+            </a>
+            <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell"></a>
+            <a href="/HTML/profile.html" class="btn1" id="loginButton">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="welcome-title">Welcome back, <span id="teacherName">Teacher</span>!</h1>
+                <p class="welcome-subtitle">Here's what's happening with your courses today</p>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalCourses">0</span>
+                            <span class="stat-label">Active Courses</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalStudents">0</span>
+                            <span class="stat-label">Total Students</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="pendingAssignments">0</span>
+                            <span class="stat-label">Pending Reviews</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="avgPerformance">0%</span>
+                            <span class="stat-label">Avg Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- My Courses Section -->
+            <section class="dashboard-card courses-section">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-book"></i>
+                        <h2>My Courses</h2>
+                    </div>
+                    <a href="/HTML/mycourses.html" class="view-all-btn">
+                        <span>View All</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <div class="courses-grid" id="courseContainer">
+                        <!-- Courses will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Assignments Section -->
+            <section class="dashboard-card assignments-section">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-file-alt"></i>
+                        <h2>Recent Assignments</h2>
+                    </div>
+                    <div class="filter-container">
+                        <select class="filter-select" id="assignmentFilter">
+                            <option value="">All Courses</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="assignments-list" id="assignmentContainer">
+                        <!-- Assignments will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Overview -->
+            <section class="dashboard-card performance-section">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-chart-bar"></i>
+                        <h2>Performance Overview</h2>
+                    </div>
+                    <div class="filter-container">
+                        <select class="filter-select" id="performanceFilter">
+                            <option value="">All Courses</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="performance-chart" id="performanceChart">
+                        <!-- Performance chart will be rendered here -->
+                    </div>
+                    <div class="performance-list" id="performanceContainer">
+                        <!-- Performance data will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                <!-- Modal content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer"> 
+            <p>&copy; 2024 Gradious LMS. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../JS/notifications.js"></script>
+    <script src="../JS/teacherIndex.js"></script>
+</body>
+
+</html>

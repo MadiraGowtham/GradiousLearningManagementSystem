@@ -1,0 +1,1293 @@
+{
+  "students": [
+    {
+      "name": "Student 1",
+      "id": "STD1000",
+      "domain": "AI with Python",
+      "score": 80,
+      "assignments": {
+        "completed": 7,
+        "pending": 2,
+        "overdue": 2
+      },
+      "attendance": 80,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-07",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-14"
+      ]
+    },
+    {
+      "name": "Student 2",
+      "id": "STD1001",
+      "domain": "Deep Learning",
+      "score": 49,
+      "assignments": {
+        "completed": 6,
+        "pending": 1,
+        "overdue": 0
+      },
+      "attendance": 73,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 2,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-19",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 3",
+      "id": "STD1002",
+      "domain": "Deep Learning",
+      "score": 35,
+      "assignments": {
+        "completed": 10,
+        "pending": 4,
+        "overdue": 2
+      },
+      "attendance": 66,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 2,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-03",
+        "2025-06-06",
+        "2025-06-07",
+        "2025-06-14"
+      ]
+    },
+    {
+      "name": "Student 4",
+      "id": "STD1003",
+      "domain": "Data Science",
+      "score": 55,
+      "assignments": {
+        "completed": 6,
+        "pending": 1,
+        "overdue": 0
+      },
+      "attendance": 66,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 2,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-08",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-14"
+      ]
+    },
+    {
+      "name": "Student 5",
+      "id": "STD1004",
+      "domain": "AI with Python",
+      "score": 31,
+      "assignments": {
+        "completed": 9,
+        "pending": 0,
+        "overdue": 2
+      },
+      "attendance": 100,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 1,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-04",
+        "2025-06-12",
+        "2025-06-14",
+        "2025-06-15",
+        "2025-06-18"
+      ]
+    },
+    {
+      "name": "Student 6",
+      "id": "STD1005",
+      "domain": "Data Science",
+      "score": 81,
+      "assignments": {
+        "completed": 6,
+        "pending": 4,
+        "overdue": 1
+      },
+      "attendance": 75,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 2,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-10",
+        "2025-06-15",
+        "2025-06-19",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 7",
+      "id": "STD1006",
+      "domain": "Data Science",
+      "score": 93,
+      "assignments": {
+        "completed": 7,
+        "pending": 1,
+        "overdue": 0
+      },
+      "attendance": 95,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 1,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-03",
+        "2025-06-06",
+        "2025-06-09",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 8",
+      "id": "STD1007",
+      "domain": "AI with Python",
+      "score": 59,
+      "assignments": {
+        "completed": 8,
+        "pending": 4,
+        "overdue": 1
+      },
+      "attendance": 71,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 0,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-09",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 9",
+      "id": "STD1008",
+      "domain": "Deep Learning",
+      "score": 64,
+      "assignments": {
+        "completed": 9,
+        "pending": 2,
+        "overdue": 2
+      },
+      "attendance": 64,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-06",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-12",
+        "2025-06-13"
+      ]
+    },
+    {
+      "name": "Student 10",
+      "id": "STD1009",
+      "domain": "Deep Learning",
+      "score": 95,
+      "assignments": {
+        "completed": 6,
+        "pending": 4,
+        "overdue": 2
+      },
+      "attendance": 63,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-04",
+        "2025-06-09",
+        "2025-06-10",
+        "2025-06-13",
+        "2025-06-14"
+      ]
+    },
+    {
+      "name": "Student 11",
+      "id": "STD1010",
+      "domain": "Data Science",
+      "score": 89,
+      "assignments": {
+        "completed": 9,
+        "pending": 1,
+        "overdue": 2
+      },
+      "attendance": 89,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-04",
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-12",
+        "2025-06-13"
+      ]
+    },
+    {
+      "name": "Student 12",
+      "id": "STD1011",
+      "domain": "Machine Learning",
+      "score": 74,
+      "assignments": {
+        "completed": 5,
+        "pending": 3,
+        "overdue": 2
+      },
+      "attendance": 74,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-12",
+        "2025-06-15",
+        "2025-06-18",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 13",
+      "id": "STD1012",
+      "domain": "NLP",
+      "score": 44,
+      "assignments": {
+        "completed": 9,
+        "pending": 2,
+        "overdue": 0
+      },
+      "attendance": 63,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-08",
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-16",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 14",
+      "id": "STD1013",
+      "domain": "Data Science",
+      "score": 81,
+      "assignments": {
+        "completed": 8,
+        "pending": 3,
+        "overdue": 0
+      },
+      "attendance": 78,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-06",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-14",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 15",
+      "id": "STD1014",
+      "domain": "NLP",
+      "score": 62,
+      "assignments": {
+        "completed": 5,
+        "pending": 4,
+        "overdue": 2
+      },
+      "attendance": 65,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-04",
+        "2025-06-08",
+        "2025-06-14",
+        "2025-06-18",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 16",
+      "id": "STD1015",
+      "domain": "Data Science",
+      "score": 96,
+      "assignments": {
+        "completed": 9,
+        "pending": 3,
+        "overdue": 1
+      },
+      "attendance": 75,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 2,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-07",
+        "2025-06-08",
+        "2025-06-17"
+      ]
+    },
+    {
+      "name": "Student 17",
+      "id": "STD1016",
+      "domain": "NLP",
+      "score": 75,
+      "assignments": {
+        "completed": 8,
+        "pending": 0,
+        "overdue": 0
+      },
+      "attendance": 81,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 0,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-03",
+        "2025-06-07",
+        "2025-06-08",
+        "2025-06-10"
+      ]
+    },
+    {
+      "name": "Student 18",
+      "id": "STD1017",
+      "domain": "Deep Learning",
+      "score": 88,
+      "assignments": {
+        "completed": 8,
+        "pending": 0,
+        "overdue": 2
+      },
+      "attendance": 79,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-10",
+        "2025-06-11"
+      ]
+    },
+    {
+      "name": "Student 19",
+      "id": "STD1018",
+      "domain": "Data Science",
+      "score": 69,
+      "assignments": {
+        "completed": 9,
+        "pending": 2,
+        "overdue": 1
+      },
+      "attendance": 82,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-06",
+        "2025-06-09",
+        "2025-06-11",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 20",
+      "id": "STD1019",
+      "domain": "AI with Python",
+      "score": 39,
+      "assignments": {
+        "completed": 5,
+        "pending": 3,
+        "overdue": 1
+      },
+      "attendance": 89,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 0,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-11",
+        "2025-06-16",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 21",
+      "id": "STD1020",
+      "domain": "AI with Python",
+      "score": 31,
+      "assignments": {
+        "completed": 8,
+        "pending": 1,
+        "overdue": 0
+      },
+      "attendance": 75,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-08",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-17"
+      ]
+    },
+    {
+      "name": "Student 22",
+      "id": "STD1021",
+      "domain": "NLP",
+      "score": 50,
+      "assignments": {
+        "completed": 7,
+        "pending": 4,
+        "overdue": 1
+      },
+      "attendance": 83,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-05",
+        "2025-06-07",
+        "2025-06-09",
+        "2025-06-15",
+        "2025-06-16"
+      ]
+    },
+    {
+      "name": "Student 23",
+      "id": "STD1022",
+      "domain": "AI with Python",
+      "score": 82,
+      "assignments": {
+        "completed": 8,
+        "pending": 2,
+        "overdue": 2
+      },
+      "attendance": 77,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 1,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-02",
+        "2025-06-08",
+        "2025-06-13",
+        "2025-06-17"
+      ]
+    },
+    {
+      "name": "Student 24",
+      "id": "STD1023",
+      "domain": "AI with Python",
+      "score": 98,
+      "assignments": {
+        "completed": 8,
+        "pending": 0,
+        "overdue": 2
+      },
+      "attendance": 100,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-07",
+        "2025-06-10",
+        "2025-06-11",
+        "2025-06-15"
+      ]
+    },
+    {
+      "name": "Student 25",
+      "id": "STD1024",
+      "domain": "AI with Python",
+      "score": 59,
+      "assignments": {
+        "completed": 8,
+        "pending": 3,
+        "overdue": 2
+      },
+      "attendance": 85,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 2,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-07",
+        "2025-06-09",
+        "2025-06-10",
+        "2025-06-15",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 26",
+      "id": "STD1025",
+      "domain": "Data Science",
+      "score": 81,
+      "assignments": {
+        "completed": 8,
+        "pending": 2,
+        "overdue": 0
+      },
+      "attendance": 87,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 2,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-06",
+        "2025-06-16",
+        "2025-06-19",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 27",
+      "id": "STD1026",
+      "domain": "Deep Learning",
+      "score": 62,
+      "assignments": {
+        "completed": 5,
+        "pending": 4,
+        "overdue": 2
+      },
+      "attendance": 91,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-12",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 28",
+      "id": "STD1027",
+      "domain": "Deep Learning",
+      "score": 70,
+      "assignments": {
+        "completed": 7,
+        "pending": 2,
+        "overdue": 2
+      },
+      "attendance": 80,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 2,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-04",
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-09"
+      ]
+    },
+    {
+      "name": "Student 29",
+      "id": "STD1028",
+      "domain": "NLP",
+      "score": 33,
+      "assignments": {
+        "completed": 7,
+        "pending": 4,
+        "overdue": 0
+      },
+      "attendance": 67,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 1,
+        "Project": 1
+      },
+      "activityLog": [
+        "2025-06-03",
+        "2025-06-04",
+        "2025-06-08",
+        "2025-06-11",
+        "2025-06-17"
+      ]
+    },
+    {
+      "name": "Student 30",
+      "id": "STD1029",
+      "domain": "Data Science",
+      "score": 92,
+      "assignments": {
+        "completed": 9,
+        "pending": 1,
+        "overdue": 0
+      },
+      "attendance": 93,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-04",
+        "2025-06-12",
+        "2025-06-14",
+        "2025-06-18"
+      ]
+    },
+    {
+      "name": "Student 31",
+      "id": "STD1030",
+      "domain": "Machine Learning",
+      "score": 66,
+      "assignments": {
+        "completed": 10,
+        "pending": 3,
+        "overdue": 1
+      },
+      "attendance": 93,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-08",
+        "2025-06-14",
+        "2025-06-16",
+        "2025-06-17"
+      ]
+    },
+    {
+      "name": "Student 32",
+      "id": "STD1031",
+      "domain": "NLP",
+      "score": 83,
+      "assignments": {
+        "completed": 7,
+        "pending": 3,
+        "overdue": 2
+      },
+      "attendance": 94,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-02",
+        "2025-06-12",
+        "2025-06-14",
+        "2025-06-18",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 33",
+      "id": "STD1032",
+      "domain": "Deep Learning",
+      "score": 80,
+      "assignments": {
+        "completed": 10,
+        "pending": 3,
+        "overdue": 0
+      },
+      "attendance": 70,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-11",
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-18"
+      ]
+    },
+    {
+      "name": "Student 34",
+      "id": "STD1033",
+      "domain": "AI with Python",
+      "score": 34,
+      "assignments": {
+        "completed": 7,
+        "pending": 2,
+        "overdue": 1
+      },
+      "attendance": 75,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-05",
+        "2025-06-09",
+        "2025-06-11"
+      ]
+    },
+    {
+      "name": "Student 35",
+      "id": "STD1034",
+      "domain": "Machine Learning",
+      "score": 50,
+      "assignments": {
+        "completed": 8,
+        "pending": 4,
+        "overdue": 0
+      },
+      "attendance": 74,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 0,
+        "Project": 0
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-10",
+        "2025-06-11",
+        "2025-06-17",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 36",
+      "id": "STD1035",
+      "domain": "Data Science",
+      "score": 33,
+      "assignments": {
+        "completed": 5,
+        "pending": 3,
+        "overdue": 1
+      },
+      "attendance": 64,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-06",
+        "2025-06-10",
+        "2025-06-18"
+      ]
+    },
+    {
+      "name": "Student 37",
+      "id": "STD1036",
+      "domain": "Machine Learning",
+      "score": 72,
+      "assignments": {
+        "completed": 8,
+        "pending": 3,
+        "overdue": 1
+      },
+      "attendance": 81,
+      "quizTypes": {
+        "MCQ": 3,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-06",
+        "2025-06-17",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 38",
+      "id": "STD1037",
+      "domain": "Deep Learning",
+      "score": 88,
+      "assignments": {
+        "completed": 5,
+        "pending": 1,
+        "overdue": 2
+      },
+      "attendance": 93,
+      "quizTypes": {
+        "MCQ": 1,
+        "Written": 0,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-01",
+        "2025-06-06",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-20"
+      ]
+    },
+    {
+      "name": "Student 39",
+      "id": "STD1038",
+      "domain": "NLP",
+      "score": 77,
+      "assignments": {
+        "completed": 5,
+        "pending": 1,
+        "overdue": 1
+      },
+      "attendance": 83,
+      "quizTypes": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-07",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-14",
+        "2025-06-19"
+      ]
+    },
+    {
+      "name": "Student 40",
+      "id": "STD1039",
+      "domain": "AI with Python",
+      "score": 88,
+      "assignments": {
+        "completed": 10,
+        "pending": 4,
+        "overdue": 2
+      },
+      "attendance": 70,
+      "quizTypes": {
+        "MCQ": 4,
+        "Written": 1,
+        "Project": 2
+      },
+      "activityLog": [
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-08",
+        "2025-06-11",
+        "2025-06-16"
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Teacher 1",
+      "id": "TCH500",
+      "courses": [
+        "Machine Learning"
+      ],
+      "hoursPerWeek": 13,
+      "engagement": [
+        90,
+        75,
+        50,
+        85
+      ],
+      "assignmentReview": {
+        "pending": 4,
+        "reviewed": 5,
+        "reassigned": 2
+      },
+      "interactionTimeline": [
+        "2025-06-03",
+        "2025-06-06",
+        "2025-06-07",
+        "2025-06-10",
+        "2025-06-12",
+        "2025-06-19"
+      ],
+      "quizAssigned": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 1
+      }
+    },
+    {
+      "name": "Teacher 2",
+      "id": "TCH501",
+      "courses": [
+        "Data Science",
+        "AI with Python",
+        "Machine Learning"
+      ],
+      "hoursPerWeek": 15,
+      "engagement": [
+        83,
+        85,
+        99,
+        89
+      ],
+      "assignmentReview": {
+        "pending": 5,
+        "reviewed": 9,
+        "reassigned": 0
+      },
+      "interactionTimeline": [
+        "2025-06-07",
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-15",
+        "2025-06-19",
+        "2025-06-20"
+      ],
+      "quizAssigned": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 1
+      }
+    },
+    {
+      "name": "Teacher 3",
+      "id": "TCH502",
+      "courses": [
+        "Deep Learning",
+        "NLP",
+        "Data Science"
+      ],
+      "hoursPerWeek": 6,
+      "engagement": [
+        74,
+        73,
+        89,
+        52
+      ],
+      "assignmentReview": {
+        "pending": 5,
+        "reviewed": 8,
+        "reassigned": 0
+      },
+      "interactionTimeline": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-14",
+        "2025-06-15"
+      ],
+      "quizAssigned": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 1
+      }
+    },
+    {
+      "name": "Teacher 4",
+      "id": "TCH503",
+      "courses": [
+        "NLP"
+      ],
+      "hoursPerWeek": 6,
+      "engagement": [
+        81,
+        76,
+        94,
+        61
+      ],
+      "assignmentReview": {
+        "pending": 4,
+        "reviewed": 8,
+        "reassigned": 2
+      },
+      "interactionTimeline": [
+        "2025-06-03",
+        "2025-06-07",
+        "2025-06-10",
+        "2025-06-15",
+        "2025-06-17",
+        "2025-06-20"
+      ],
+      "quizAssigned": {
+        "MCQ": 1,
+        "Written": 1,
+        "Project": 0
+      }
+    },
+    {
+      "name": "Teacher 5",
+      "id": "TCH504",
+      "courses": [
+        "Data Science",
+        "AI with Python"
+      ],
+      "hoursPerWeek": 15,
+      "engagement": [
+        74,
+        78,
+        62,
+        63
+      ],
+      "assignmentReview": {
+        "pending": 5,
+        "reviewed": 6,
+        "reassigned": 1
+      },
+      "interactionTimeline": [
+        "2025-06-04",
+        "2025-06-07",
+        "2025-06-09",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-16"
+      ],
+      "quizAssigned": {
+        "MCQ": 3,
+        "Written": 1,
+        "Project": 0
+      }
+    },
+    {
+      "name": "Teacher 6",
+      "id": "TCH505",
+      "courses": [
+        "Deep Learning"
+      ],
+      "hoursPerWeek": 19,
+      "engagement": [
+        50,
+        85,
+        61,
+        71
+      ],
+      "assignmentReview": {
+        "pending": 2,
+        "reviewed": 10,
+        "reassigned": 0
+      },
+      "interactionTimeline": [
+        "2025-06-01",
+        "2025-06-03",
+        "2025-06-07",
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-18"
+      ],
+      "quizAssigned": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 0
+      }
+    },
+    {
+      "name": "Teacher 7",
+      "id": "TCH506",
+      "courses": [
+        "AI with Python"
+      ],
+      "hoursPerWeek": 13,
+      "engagement": [
+        90,
+        63,
+        76,
+        77
+      ],
+      "assignmentReview": {
+        "pending": 5,
+        "reviewed": 10,
+        "reassigned": 0
+      },
+      "interactionTimeline": [
+        "2025-06-03",
+        "2025-06-06",
+        "2025-06-13",
+        "2025-06-17",
+        "2025-06-19",
+        "2025-06-20"
+      ],
+      "quizAssigned": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 0
+      }
+    },
+    {
+      "name": "Teacher 8",
+      "id": "TCH507",
+      "courses": [
+        "Deep Learning"
+      ],
+      "hoursPerWeek": 15,
+      "engagement": [
+        87,
+        58,
+        81,
+        68
+      ],
+      "assignmentReview": {
+        "pending": 4,
+        "reviewed": 9,
+        "reassigned": 2
+      },
+      "interactionTimeline": [
+        "2025-06-01",
+        "2025-06-06",
+        "2025-06-09",
+        "2025-06-12",
+        "2025-06-16",
+        "2025-06-18"
+      ],
+      "quizAssigned": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 1
+      }
+    },
+    {
+      "name": "Teacher 9",
+      "id": "TCH508",
+      "courses": [
+        "Deep Learning",
+        "Machine Learning",
+        "NLP"
+      ],
+      "hoursPerWeek": 5,
+      "engagement": [
+        68,
+        88,
+        59,
+        54
+      ],
+      "assignmentReview": {
+        "pending": 4,
+        "reviewed": 5,
+        "reassigned": 2
+      },
+      "interactionTimeline": [
+        "2025-06-01",
+        "2025-06-04",
+        "2025-06-06",
+        "2025-06-11",
+        "2025-06-16",
+        "2025-06-19"
+      ],
+      "quizAssigned": {
+        "MCQ": 3,
+        "Written": 2,
+        "Project": 0
+      }
+    },
+    {
+      "name": "Teacher 10",
+      "id": "TCH509",
+      "courses": [
+        "NLP"
+      ],
+      "hoursPerWeek": 13,
+      "engagement": [
+        69,
+        61,
+        64,
+        70
+      ],
+      "assignmentReview": {
+        "pending": 5,
+        "reviewed": 10,
+        "reassigned": 1
+      },
+      "interactionTimeline": [
+        "2025-06-01",
+        "2025-06-02",
+        "2025-06-03",
+        "2025-06-10",
+        "2025-06-12",
+        "2025-06-13"
+      ],
+      "quizAssigned": {
+        "MCQ": 2,
+        "Written": 1,
+        "Project": 1
+      }
+    }
+  ]
+}

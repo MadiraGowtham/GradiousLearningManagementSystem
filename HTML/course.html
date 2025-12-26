@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course - LearnEdge</title>
+  <link rel="stylesheet" href="../CSS/course.css" />
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo" />
+    <nav>
+      <a href="/HTML/AllCourses.html"><button class="btn">All Courses</button></a>
+      <input type="text" placeholder="Search" class="searchbar" />
+      <a href="/HTML/messages.html"><button class="btn2">Messages</button></a>
+      <a href="/HTML/report.html"><button class="btn2">Report</button></a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell" /></a>
+      <a href="/HTML/login.html" class="btn1">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-details">
+      <div class="course-info">
+        <h1 class="course-title"></h1>
+        <p class="course-desc"></p>
+        <p class="course-duration"></p>
+      </div>
+      <img src="" alt="Course Image" class="course-image" />
+    </section>
+
+    <section class="work">
+      <div class="section">
+        <a href="#quiz">Quiz</a>
+        <a href="#sessions">Video Sessions</a>
+        <a href="#resources">Resources</a>
+        <a href="#assignment">Assignments</a>
+      </div>
+
+      <div class="container">
+        <div class="quiz-list" id="quiz">
+          <div class="quiz-header">
+            <h2>QUIZ</h2>
+            <div class="quiz-controls">
+              <input type="text" id="quizSearch" placeholder="Search quizzes..." class="search-input">
+              <select id="quizStatusFilter" class="filter-select">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="overdue">Overdue</option>
+              </select>
+              <button id="refreshQuizBtn" class="btn-refresh">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+              <button id="createQuizBtn" class="btn-create" style="display: none;">
+                <i class="fas fa-plus"></i> Create Quiz
+              </button>
+            </div>
+          </div>
+          
+          <!-- Quiz Stats -->
+          <div class="quiz-stats">
+            <div class="stat-card">
+              <i class="fas fa-clipboard-list"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="totalQuizzes">0</span>
+                <span class="stat-label">Total Quizzes</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="completedQuizzes">0</span>
+                <span class="stat-label">Completed</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-clock"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="pendingQuizzes">0</span>
+                <span class="stat-label">Pending</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-star"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="avgScore">0</span>
+                <span class="stat-label">Avg Score</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz Grid -->
+          <div class="quiz-container" id="quizContainer">
+            <!-- Quizzes will be dynamically loaded here -->
+          </div>
+
+          <!-- Teacher Submissions Section -->
+          <div id="teacherSubmissionsSection" style="display: none;">
+            <h3>Student Submissions</h3>
+            <div class="submissions-container" id="submissionsContainer">
+              <!-- Submissions will be loaded here for teachers -->
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-list" id="sessions">
+          <h2>VIDEO SESSIONS</h2>
+          <div class="session-container"></div>
+        </div>
+
+        <div class="quiz-list" id="resources">
+          <h2>RESOURCES</h2>
+          <div class="resource-container"></div>
+        </div>
+
+        <div class="quiz-list" id="assignment">
+          <div class="assignment-header">
+            <h2>ASSIGNMENTS</h2>
+            <div class="assignment-controls">
+              <input type="text" id="assignmentSearch" placeholder="Search assignments..." class="search-input">
+              <select id="assignmentStatusFilter" class="filter-select">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="overdue">Overdue</option>
+              </select>
+              <button id="refreshAssignmentBtn" class="btn-refresh">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Assignment Stats -->
+          <div class="assignment-stats-row">
+            <div class="stat-card">
+              <i class="fas fa-clipboard-list"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="totalAssignments">0</span>
+                <span class="stat-label">Total Assignments</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="completedAssignments">0</span>
+                <span class="stat-label">Completed</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-clock"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="pendingAssignments">0</span>
+                <span class="stat-label">Pending</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-exclamation-triangle"></i>
+              <div class="stat-info">
+                <span class="stat-number" id="overdueAssignments">0</span>
+                <span class="stat-label">Overdue</span>
+              </div>
+            </div>
+          </div>
+          <!-- Assignment Grid -->
+          <div class="assignment-container" id="assignmentContainer">
+            <!-- Assignments will be dynamically loaded here -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quiz Modals -->
+  
+  <!-- Take Quiz Modal -->
+  <div id="takeQuizModal" class="modal">
+    <div class="modal-content quiz-modal">
+      <div class="modal-header">
+        <h2><i class="fas fa-edit"></i> Take Quiz</h2>
+        <div class="quiz-timer" id="quizTimer">
+          <i class="fas fa-clock"></i>
+          <span id="timeRemaining">00:00</span>
+        </div>
+        <span class="close" id="closeTakeQuizModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="quiz-info">
+          <h3 id="modalQuizTitle"></h3>
+          <p id="modalQuizInstructions"></p>
+          <div class="quiz-meta">
+            <span><i class="fas fa-clock"></i> Duration: <span id="modalQuizDuration"></span></span>
+            <span><i class="fas fa-question-circle"></i> Questions: <span id="modalQuizQuestions"></span></span>
+          </div>
+        </div>
+        <form id="quizForm">
+          <div id="quizQuestionsContainer"></div>
+          <div class="quiz-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Submit Quiz
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelQuiz">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Quiz Modal (Teacher Only) -->
+  <div id="createQuizModal" class="modal">
+    <div class="modal-content quiz-modal">
+      <div class="modal-header">
+        <h2><i class="fas fa-plus"></i> Create New Quiz</h2>
+        <span class="close" id="closeCreateModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="createQuizForm">
+          <div class="form-group">
+            <label for="quizTitle">Quiz Title:</label>
+            <input type="text" id="quizTitle" name="quizTitle" required>
+          </div>
+          <div class="form-group">
+            <label for="quizCourse">Course:</label>
+            <select id="quizCourse" name="quizCourse" required>
+              <option value="">Select Course</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quizDescription">Description:</label>
+            <textarea id="quizDescription" name="quizDescription" rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quizDuration">Duration (minutes):</label>
+              <input type="number" id="quizDuration" name="quizDuration" min="5" max="180" value="30" required>
+            </div>
+            <div class="form-group">
+              <label for="quizMaxScore">Max Score:</label>
+              <input type="number" id="quizMaxScore" name="quizMaxScore" min="10" max="200" value="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="quizDueDate">Due Date:</label>
+            <input type="datetime-local" id="quizDueDate" name="quizDueDate" required>
+          </div>
+          <div class="form-group">
+            <label for="quizInstructions">Instructions:</label>
+            <textarea id="quizInstructions" name="quizInstructions" rows="3" placeholder="Enter quiz instructions..."></textarea>
+          </div>
+          
+          <div class="questions-section">
+            <h3>Questions</h3>
+            <div id="questionsContainer"></div>
+            <button type="button" class="btn btn-secondary" id="addQuestionBtn">
+              <i class="fas fa-plus"></i> Add Question
+            </button>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Create Quiz
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelCreate">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Results Modal -->
+  <div id="quizResultsModal" class="modal">
+    <div class="modal-content quiz-modal">
+      <div class="modal-header">
+        <h2><i class="fas fa-star"></i> Quiz Results</h2>
+        <span class="close" id="closeResultsModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="results-summary">
+          <h3 id="resultsQuizTitle"></h3>
+          <div class="score-display">
+            <div class="score-circle">
+              <span id="resultsScore">0/100</span>
+              <span id="resultsPercentage">0%</span>
+            </div>
+          </div>
+          <div class="results-meta">
+            <span><i class="fas fa-clock"></i> Time Taken: <span id="resultsTimeTaken"></span></span>
+          </div>
+        </div>
+        <div class="question-review">
+          <h4>Question Review</h4>
+          <div id="questionReviewContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grade Submission Modal (Teacher Only) -->
+  <div id="gradeModal" class="modal">
+    <div class="modal-content quiz-modal">
+      <div class="modal-header">
+        <h2><i class="fas fa-star"></i> Grade Submission</h2>
+        <span class="close" id="closeGradeModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="submission-info">
+          <h3>Student: <span id="gradeStudentName"></span></h3>
+          <h4>Quiz: <span id="gradeQuizTitle"></span></h4>
+          <p>Submitted: <span id="gradeSubmissionDate"></span></p>
+          <p>Time Taken: <span id="gradeTimeTaken"></span></p>
+        </div>
+        <div id="gradeQuizAnswers"></div>
+        <form id="gradeForm">
+          <div class="form-group">
+            <label for="gradeScore">Score (out of <span id="maxScore">100</span>):</label>
+            <input type="number" id="gradeScore" name="gradeScore" min="0" max="100" required>
+          </div>
+          <div class="form-group">
+            <label for="gradeFeedback">Feedback:</label>
+            <textarea id="gradeFeedback" name="gradeFeedback" rows="4" placeholder="Provide feedback to the student..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Save Grade
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelGrade">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Popups -->
+  <div class="popup" id="popup" style="display:none;">
+    <div class="popup-content" id="popupInner">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div id="popupContent"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Gradious All Rights Reserved</p>
+  </footer>
+  <script src="../JS/course.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

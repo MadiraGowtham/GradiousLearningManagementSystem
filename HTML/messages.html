@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - LearnEdge LMS</title>
+    <link rel="stylesheet" href="../CSS/messages.css">
+    <link rel="stylesheet" href="../CSS/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modern Chat Interface Styles with #1025a1 theme */
+        .messages-container {
+            display: flex;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+        }
+
+        .contacts-sidebar {
+            width: 350px;
+            background: white;
+            border-right: 2px solid #1025a1;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 20px rgba(16, 37, 161, 0.1);
+        }
+
+        .contacts-header {
+            padding: 20px;
+            border-bottom: 1px solid #e1e5e9;
+            background: #1025a1;
+            color: white;
+        }
+
+        .contacts-header h2 {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .filter-container {
+            position: relative;
+        }
+
+        .filter {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+            appearance: none;
+            transition: all 0.3s ease;
+        }
+
+        .filter:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-container::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1025a1;
+            pointer-events: none;
+        }
+
+        .contacts-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(16, 37, 161, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 37, 161, 0.15);
+            border-color: #1025a1;
+        }
+
+        .contact.active {
+            background: #1025a1;
+            color: white;
+            border-color: #1025a1;
+        }
+
+        .contact img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact .details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact .details h3 {
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact .details p {
+            font-size: 12px;
+            color: #666;
+            margin: 0 0 3px 0;
+        }
+
+        .contact .details small {
+            font-size: 11px;
+            color: #999;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact.active .details p,
+        .contact.active .details small {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 20px 0 0 0;
+            overflow: hidden;
+            box-shadow: -5px 0 20px rgba(16, 37, 161, 0.1);
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            background: #1025a1;
+            color: white;
+            box-shadow: 0 2px 10px rgba(16, 37, 161, 0.1);
+        }
+
+        .chat-user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        .chat-user-details h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .chat-user-details p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .chat-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .action-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .action-btn i {
+            font-size: 12px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px 30px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .chat-history {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        .message-bubble:hover {
+            transform: translateY(-1px);
+        }
+
+        .message-bubble.sent {
+            background: #1025a1;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 8px;
+        }
+
+        .message-bubble.received {
+            background: white;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 8px;
+            box-shadow: 0 2px 10px rgba(16, 37, 161, 0.1);
+        }
+
+        .message-bubble.selected {
+            background: #ffe066 !important;
+            border: 2px solid #f59f00 !important;
+            box-shadow: 0 0 15px rgba(255, 224, 102, 0.5) !important;
+            position: relative;
+        }
+
+        .message-bubble.selected::after {
+            content: "Selected";
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            font-size: 10px;
+            color: #b8860b;
+            background: white;
+            border-radius: 10px;
+            padding: 2px 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-text {
+            margin: 0 0 5px 0;
+            line-height: 1.4;
+        }
+
+        .message-timestamp {
+            font-size: 11px;
+            opacity: 0.7;
+            text-align: right;
+        }
+
+        .forwarded-indicator {
+            font-size: 10px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .forwarded-indicator i {
+            font-size: 8px;
+        }
+
+        .chat-input {
+            padding: 20px 30px;
+            background: white;
+            border-top: 1px solid #e1e5e9;
+        }
+
+        .reply-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .reply-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .reply-input:focus {
+            outline: none;
+            border-color: #1025a1;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(16, 37, 161, 0.1);
+        }
+
+        .reply-input:disabled {
+            background: #f1f3f4;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .send-btn {
+            background: #1025a1;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 37, 161, 0.4);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .blocked-banner {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            margin: 10px 30px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .blocked-banner:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            text-align: center;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            min-width: 400px;
+            max-width: 90vw;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #f1f3f4;
+            color: #333;
+        }
+
+        .modal-body {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1025a1;
+            box-shadow: 0 0 0 3px rgba(16, 37, 161, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .btn-secondary {
+            background: #f1f3f4;
+            color: #333;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #e8eaed;
+        }
+
+        .btn-primary {
+            background: #1025a1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(16, 37, 161, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .messages-container {
+                flex-direction: column;
+            }
+
+            .contacts-sidebar {
+                width: 100%;
+                height: 40vh;
+            }
+
+            .chat-main {
+                height: 60vh;
+                border-radius: 0;
+            }
+
+            .contact {
+                padding: 12px;
+            }
+
+            .chat-header {
+                padding: 15px 20px;
+            }
+
+            .chat-messages {
+                padding: 15px 20px;
+            }
+
+            .chat-input {
+                padding: 15px 20px;
+            }
+
+            .message-bubble {
+                max-width: 85%;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scrollbar Styling */
+        .contacts-list::-webkit-scrollbar,
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .contacts-list::-webkit-scrollbar-track,
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .contacts-list::-webkit-scrollbar-thumb,
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .contacts-list::-webkit-scrollbar-thumb:hover,
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Legacy support for original messages.js */
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 710px;
+            overflow-y: auto;
+            border-right: 4px solid #1025a1;
+            padding: 20px 20px;
+            gap: 25px;
+            background-color: #1025a1;
+        }
+
+        .chat {
+            width: 70%;
+            height: 740px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reply {
+            padding: 0px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .reply input {
+            width: 90%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .options .btn {
+            background: #1025a1;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .options .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo">
+        <nav>
+            <a href="/HTML/AllCourses.html">
+                <button class="btn">All Courses</button>
+            </a>
+            <input type="text" placeholder="Search" class="searchbar">
+            <a href="/HTML/messages.html">
+                <button class="btn2">Messages</button>
+            </a>
+            <a href="/HTML/report.html">
+                <button class="btn2">Report</button>
+            </a>
+            <a href="#notifications" class="notif">
+                <img src="../images/bell.png" alt="Notifications" class="bell">
+            </a>
+            <div class="profile-dropdown">
+                <button class="btn1">Profile ⌄</button>
+                <div class="dropdown-menu">
+                    <a href="/HTML/profile.html">👤 View Profile</a>
+                    <a href="#" onclick="logout()">🚪 Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Messages Container -->
+    <div class="messages-container">
+        <!-- Contacts Sidebar -->
+        <div class="contacts-sidebar">
+            <div class="contacts-header">
+                <h2><i class="fas fa-comments"></i> Messages</h2>
+                <div class="filter-container">
+                    <select class="filter" id="courseFilter">
+                        <option selected disabled>Filter By Course</option>
+                    </select>
+                </div>
+            </div>
+            <div class="contacts-list" id="contactsList">
+                <!-- Contacts will be dynamically populated here -->
+            </div>
+        </div>
+
+        <!-- Chat Main Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-user-info">
+                    <div class="chat-user-avatar" id="chatUserAvatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="chat-user-details" id="chatUserDetails">
+                        <h3>Select a Contact</h3>
+                        <p>Choose someone to start chatting</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="forwardBtn" disabled>
+                        <i class="fas fa-share"></i> Forward
+                    </button>
+                    <button class="action-btn" id="deleteBtn" disabled>
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                    <button class="action-btn" id="blockBtn">
+                        <i class="fas fa-ban"></i> Block
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="empty-state">
+                    <i class="fas fa-comments"></i>
+                    <h3>Welcome to Messages</h3>
+                    <p>Select a contact from the sidebar to start chatting</p>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <div class="reply-container">
+                    <input type="text" 
+                           class="reply-input" 
+                           id="replyInput" 
+                           placeholder="Type your message here..."
+                           disabled>
+                    <button class="send-btn" id="sendBtn" disabled>
+                        <i class="fas fa-paper-plane"></i> Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legacy DOM structure for original messages.js compatibility -->
+    <main style="display: block; position: absolute; top: -9999px; left: -9999px;">
+        <section class="contacts">
+            <select class="filter">
+                <option selected disabled>Filter By Course</option>
+            </select>
+        </section>
+
+        <section class="chat">
+            <div class="profile">
+                <img src="../images/profileicon.jpeg" alt="Contacts" class="img">
+                <div class="details" id="chat-details">
+                    <h3>Select a Contact</h3>
+                    <p>ID will appear here</p>
+                </div>
+                <div class="options">
+                    <button class="btn">Forward</button>
+                    <button class="btn">Delete</button>
+                    <button class="btn">Block</button>
+                </div>
+            </div>
+            <div class="reply">
+                <input type="text" placeholder="Reply....." id="replyInput">
+                <button class="btn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Forward Message Modal -->
+    <div id="forwardModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-share"></i> Forward Message</h3>
+                <button class="modal-close" onclick="closeModal('forwardModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="forwardSelect">Select contact to forward to:</label>
+                    <select id="forwardSelect" class="form-control">
+                        <option value="">Choose a contact...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('forwardModal')">Cancel</button>
+                <button class="btn-primary" onclick="confirmForward()">Forward Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h3>
+                <button class="modal-close" onclick="closeModal('deleteModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this message? This action cannot be undone.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('deleteModal')">Cancel</button>
+                <button class="btn-primary" onclick="confirmDelete()">Delete Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Block Confirmation Modal -->
+    <div id="blockModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-ban"></i> Block Contact</h3>
+                <button class="modal-close" onclick="closeModal('blockModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to block this contact? You won't be able to send or receive messages from them.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('blockModal')">Cancel</button>
+                <button class="btn-primary" onclick="confirmBlock()">Block Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unblock Confirmation Modal -->
+    <div id="unblockModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-check"></i> Unblock Contact</h3>
+                <button class="modal-close" onclick="closeModal('unblockModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to unblock this contact? You'll be able to send and receive messages again.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('unblockModal')">Cancel</button>
+                <button class="btn-primary" onclick="confirmUnblock()">Unblock Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Notifications -->
+    <div id="notificationContainer" style="position: fixed; top: 20px; right: 20px; z-index: 10000;"></div>
+
+    <!-- JavaScript -->
+    <script src="../JS/messages.js"></script>
+    <script src="../JS/notifications.js"></script>
+    
+    <script>
+        // Simple notification system
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function showNotification(message, type = 'success') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            
+            notification.style.cssText = `
+                background: ${type === 'success' ? '#28a745' : '#dc3545'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                animation: slideInRight 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                ${message}
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Add CSS animations and profile dropdown styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            /* Profile Dropdown Styles with better hover behavior */
+            .profile-dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .profile-btn {
+                background: #1025a1;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-weight: bold;
+                min-width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            
+            .profile-btn:hover {
+                background: #0a1a7a;
+                transform: translateY(-1px);
+            }
+            
+            .dropdown-content {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background-color: white;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1000;
+                border-radius: 8px;
+                overflow: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                margin-top: 5px;
+            }
+            
+            .dropdown-content a {
+                color: #333;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                transition: background-color 0.3s;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .dropdown-content a:last-child {
+                border-bottom: none;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: #f8f9fa;
+                color: #1025a1;
+            }
+            
+            /* Show dropdown on hover with delay */
+            .profile-dropdown:hover .dropdown-content {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            /* Keep dropdown open when hovering over it */
+            .dropdown-content:hover {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            
+            /* Add a small delay before hiding */
+            .profile-dropdown .dropdown-content {
+                transition-delay: 0s;
+            }
+            
+            .profile-dropdown:hover .dropdown-content {
+                transition-delay: 0s;
+            }
+            
+            .profile-dropdown:not(:hover) .dropdown-content {
+                transition-delay: 0.1s;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Modal functions
+        window.confirmForward = function() {
+            closeModal('forwardModal');
+            showNotification('Message forwarded successfully!', 'success');
+        };
+
+        window.confirmDelete = function() {
+            closeModal('deleteModal');
+            showNotification('Message deleted successfully!', 'success');
+        };
+
+        window.confirmBlock = function() {
+            closeModal('blockModal');
+            showNotification('Contact blocked successfully!', 'success');
+        };
+
+        window.confirmUnblock = function() {
+            closeModal('unblockModal');
+            showNotification('Contact unblocked successfully!', 'success');
+        };
+
+        // Logout function
+        function logoutUser() {
+            localStorage.removeItem('loggedInUser');
+            localStorage.removeItem('userType');
+            localStorage.removeItem('userId');
+            localStorage.removeItem('userName');
+            window.location.href = '/HTML/login.html';
+        }
+
+        // Dynamic header based on user type
+        function updateHeaderForUserType() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            const nav = document.querySelector('nav');
+            
+            if (loggedInUser && loggedInUser.type === 'teacher') {
+                // Generate initials for teacher
+                const names = loggedInUser.name.split(" ");
+                const initials = names.length > 1 
+                    ? `${names[0][0]}${names[names.length - 1][0]}`
+                    : names[0][0];
+                
+                // Teacher header: Search, Messages, Profile
+                nav.innerHTML = `
+                    <input type="text" placeholder="Search" class="searchbar" id="searchInput">
+                    <a href="/HTML/messages.html">
+                        <button class="btn1">Messages</button>
+                    </a>
+                    <a href="#notifications" class="notif">
+                        <img src="../images/bell.png" alt="Notifications" class="bell">
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="btn1 profile-btn">${initials.toUpperCase()}</button>
+                        <div class="dropdown-content">
+                            <a href="/HTML/profile.html">View Profile</a>
+                            <a href="#" onclick="logoutUser()">Logout</a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Generate initials for student
+                const names = loggedInUser.name.split(" ");
+                const initials = names.length > 1 
+                    ? `${names[0][0]}${names[names.length - 1][0]}`
+                    : names[0][0];
+                
+                // Student header: All Courses, Search, Messages, Report, Profile
+                nav.innerHTML = `
+                    <a href="/HTML/AllCourses.html">
+                        <button class="btn">All Courses</button>
+                    </a>
+                    <input type="text" placeholder="Search" class="searchbar">
+                    <a href="/HTML/messages.html">
+                        <button class="btn2">Messages</button>
+                    </a>
+                    <a href="/HTML/report.html">
+                        <button class="btn2">Report</button>
+                    </a>
+                    <a href="#notifications" class="notif">
+                        <img src="../images/bell.png" alt="Notifications" class="bell">
+                    </a>
+                    <div class="profile-dropdown">
+                        <button class="btn1 profile-btn">${initials.toUpperCase()}</button>
+                        <div class="dropdown-content">
+                            <a href="/HTML/profile.html">View Profile</a>
+                            <a href="#" onclick="logoutUser()">Logout</a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Messages page loaded');
+            
+            // Update header based on user type
+            updateHeaderForUserType();
+            
+            // Add smooth scrolling
+            const chatMessages = document.getElementById('chatMessages');
+            if (chatMessages) {
+                chatMessages.style.scrollBehavior = 'smooth';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report an Issue | LearnEdge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/report.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container" aria-label="Student Issue Report Form">
+    <div style="text-align:center; margin-bottom:18px;">
+      <img src="../images/Logo.png" alt="LearnEdge Logo" style="height:54px; margin-bottom:8px;">
+      <div style="font-size:1.18rem; color:#6c7a89; font-weight:600; letter-spacing:0.01em;">We're here to help! Please describe your issue below.</div>
+    </div>
+    <h2>Report an Issue</h2>
+    <form id="reportForm" aria-label="Report Issue Form" autocomplete="on" novalidate>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="Enter your full name" aria-required="true">
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="Enter your email address" aria-required="true">
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required placeholder="Issue subject (e.g. Assignment error)" aria-required="true">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Describe your issue or question in detail..." aria-required="true"></textarea>
+
+      <button type="submit" aria-label="Submit Issue">Submit Issue</button>
+    </form>
+    <div id="formFeedback" role="alert" aria-live="polite"></div>
+    <div style="margin-top:32px; text-align:center; color:#b0b8c1; font-size:0.98rem;">
+      <span>Need urgent help? <a href="mailto:support@learnedge.com" style="color:#4e73df; text-decoration:underline;">Contact Support</a></span>
+    </div>
+  </main>
+  <script src="../JS/report.js"></script>
+</body>
+</html>

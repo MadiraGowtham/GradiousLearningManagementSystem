@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate of Achievement</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body { background: #e9ecef; font-family: 'Times New Roman', serif; }
+    .certificate-container {
+      width: 1123px; /* A4 landscape width in px at 96dpi */
+      height: 794px; /* A4 landscape height in px at 96dpi */
+      margin: 40px auto;
+      background: #fff;
+      border: 12px double #1025a1;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(16,37,161,0.12);
+      padding: 48px 32px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .certificate-logo {
+      width: 520px;
+      display: block;
+      margin: 0 auto 24px auto;
+      position: static;
+    }
+    .certificate-title {
+      color: #1025a1;
+      font-size: 2.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .certificate-content {
+      text-align: center;
+      color: #1025a1;
+    }
+    .certificate-award {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .certificate-name {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 8px;
+    }
+    .certificate-course {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    .certificate-date {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .certificate-footer {
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #1025a1;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate-container" id="certificateArea">
+    <div style="width:100%;display:flex;justify-content:center;align-items:center;">
+      <img src="../images/Logo.png" class="certificate-logo" alt="Logo" />
+    </div>
+    <div class="certificate-title">Certificate of Achievement</div>
+    <div class="certificate-content">
+      <div class="certificate-award">This certificate is awarded to</div>
+      <div class="certificate-name" id="studentName"></div>
+      <div class="certificate-award">for successfully completing the course</div>
+      <div class="certificate-course" id="courseTitle"></div>
+      <div class="certificate-date" id="completionDate"></div>
+    </div>
+    <div class="certificate-footer">LearnEdge LMS &bull; www.learnedge.com</div>
+  </div>
+  <script>
+    // Helper to get URL params
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || '';
+    }
+    // Populate certificate fields
+    const studentName = getParam('studentName') || '';
+    const courseTitle = getParam('courseTitle') || '';
+    const completionDate = getParam('date') || '';
+    document.getElementById('studentName').textContent = studentName;
+    document.getElementById('courseTitle').textContent = courseTitle;
+    document.getElementById('completionDate').textContent = completionDate ? `Date of Completion: ${completionDate}` : '';
+    // Removed all html2pdf and download logic
+  </script>
+</body>
+</html> 

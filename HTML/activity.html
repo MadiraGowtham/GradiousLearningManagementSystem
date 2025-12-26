@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Activity Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/activity.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../CSS/notifications.css">
+  
+  <style>
+    body { background: #f8f9fa; }
+    .summary-card {
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      background: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .summary-card h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .summary-card span { color: #6c757d; font-size: 1rem; }
+    .chart-container { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 1.5rem; margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <!-- Top Header from users.html, with login/profile dropdown logic -->
+  <header>
+    <img src="../images/Logo.png" alt="LearnEdge Logo" class="logo" />
+    <nav>
+      <a href="/HTML/adminIndex.html"><button class="btn">Dashboard</button></a>
+      <a href="/HTML/users.html"><button class="btn">Users</button></a>
+      <input type="text" placeholder="Search" class="searchbar" />
+      <a href="/HTML/activity.html"><button class="btn1">Activity</button></a>
+      <a href="#notifications" class="notif"><img src="../images/bell.png" alt="Notifications" class="bell" /></a>
+      <div id="profileOrLogin"></div>
+    </nav>
+  </header>
+  <!-- End Top Header -->
+  <main class="container-fluid px-3 px-md-4">
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4" id="summaryCardsRow">
+      <!-- Cards will be rendered by JS -->
+    </div>
+    <!-- Filters -->
+    <div class="row g-2 align-items-center mb-4">
+      <div class="col-12 col-md-3">
+        <select id="userType" class="form-select">
+          <option value="">All Users</option>
+          <option value="student">Students</option>
+          <option value="teacher">Teachers</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-3">
+        <select id="domainSelect" class="form-select">
+          <option value="">All Domains</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-3">
+        <select id="courseSelect" class="form-select">
+          <option value="">All Courses</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-3">
+        <input type="date" id="dateFrom" class="form-control" placeholder="From">
+        <input type="date" id="dateTo" class="form-control mt-1" placeholder="To">
+      </div>
+    </div>
+    <!-- Advanced Filters -->
+    <div class="row g-2 align-items-center mb-4">
+      <div class="col-12 col-md-2">
+        <select id="assignmentStatus" class="form-select">
+          <option value="">All Assignment Status</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+          <option value="overdue">Overdue</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-2">
+        <select id="quizStatus" class="form-select">
+          <option value="">All Quiz Types</option>
+          <option value="MCQ">MCQ</option>
+          <option value="Written">Written</option>
+          <option value="Project">Project</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-2">
+        <label for="scoreRange" class="form-label mb-0">Score</label>
+        <input type="range" id="scoreRange" class="form-range" min="0" max="100" step="1" value="0">
+        <span id="scoreRangeValue">0+</span>
+      </div>
+      <div class="col-12 col-md-2">
+        <label for="attendanceRange" class="form-label mb-0">Attendance</label>
+        <input type="range" id="attendanceRange" class="form-range" min="0" max="100" step="1" value="0">
+        <span id="attendanceRangeValue">0%+</span>
+      </div>
+      <div class="col-12 col-md-4">
+        <input type="text" id="liveSearch" class="form-control" placeholder="Search users, courses, activities...">
+      </div>
+    </div>
+    <!-- Charts -->
+    <div class="row" id="chartsRow">
+      <div class="col-12 col-xl-6">
+        <div class="chart-container mb-4">
+          <canvas id="chart1"></canvas>
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="chart-container mb-4">
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="chart-container mb-4">
+          <canvas id="chart3"></canvas>
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="chart-container mb-4">
+          <canvas id="chart4"></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- Recent Activity Log -->
+    <div class="row">
+      <div class="col-12">
+        <div class="chart-container">
+          <h5 class="mb-3">Recent Activity Log</h5>
+          <div class="table-responsive">
+            <table class="table table-sm table-hover align-middle" id="activityLogTable">
+              <thead class="table-light">
+                <tr>
+                  <th>User</th>
+                  <th>Type</th>
+                  <th>Domain</th>
+                  <th>Course</th>
+                  <th>Activity</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Activity log will be rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center py-4 small" style="background-color:#1025a1;color:white;">&copy; Gradious All Rights Reserved</footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../JS/activity.js"></script>
+  <script src="../JS/notifications.js"></script>
+</body>
+</html>

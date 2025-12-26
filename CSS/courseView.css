@@ -1,0 +1,606 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn, .btn1,.btn2,.notif  {
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0a1a7a;
+}
+
+.btn2 {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.btn1 {
+  color: #333;
+  text-decoration:none;
+}
+
+.bell{
+  width: 25px;
+  height:25px;
+}
+
+.btn2:hover {
+   background-color: #1025a1;
+   color: white;
+}
+
+.searchbar {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 290px;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background-color: #1025a1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f9fc;
+  color: #1025a1;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  right: 0;
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Course Details Section */
+.course-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 70px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 400px;
+}
+
+.course-info {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 40px;
+}
+
+.course-info h1 {
+    color: #1025a1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.course-info .desc {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.course-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.course-meta p {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: 500;
+    color: #333;
+}
+
+.course-meta .price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.course-meta .enrolled {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
+.enrollment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Enrollment Status Styles */
+.course-status {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.course-status.approved {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+
+
+.course-status.not-enrolled {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Enhanced Button Styles */
+.enroll-btn {
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.course-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.course-image:hover {
+    transform: scale(1.05);
+}
+
+/* Syllabus and Overview Section */
+.overview {
+    display: flex;
+    gap: 40px;
+    padding: 40px 70px;
+}
+
+.Syllabus {
+    flex: 1;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.completion {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.name {
+    color: #1025a1;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #1025a1;
+    padding-bottom: 10px;
+}
+
+.syllabus-list {
+    list-style: none;
+    padding: 0;
+}
+
+.syllabus-list li {
+    background: white;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.syllabus-list li:hover {
+    transform: translateX(5px);
+}
+
+.syllabus-list li b {
+    color: #1025a1;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.syllabus-list li p {
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.overview-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #1025a1;
+}
+
+.overview-section h3 {
+    color: #1025a1;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.overview-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.overview-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    padding-left: 20px;
+}
+
+.overview-section li:before {
+    content: "✓";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Opportunities Section */
+.opportunities {
+    background-color: aliceblue;
+    color: black;
+    padding: 40px 70px;
+    margin: 40px 0;
+}
+
+.container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.opportunity {
+    display: flex;
+    align-items: center;
+    border: 4px solid #1025a1;
+    border-radius: 20px;
+    height: 140px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.opportunity:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(16, 37, 161, 0.2);
+    border-color: #0a1a7a;
+}
+
+.opportunity img {
+    height: 60px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.opportunity-content {
+    flex: 1;
+}
+
+.opportunity-content h4 {
+    color: #1025a1;
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+}
+
+.opportunity-content p {
+    margin: 0 0 5px 0;
+    color: #666;
+    line-height: 1.4;
+}
+
+.opportunity-content .salary {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Enquiry Section */
+.enquiry {
+    padding: 40px 70px;
+    background: white;
+}
+
+.message {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.message form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.message form input {
+    height: 45px;
+    padding: 0 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.message form input:focus {
+    outline: none;
+    border-color: #1025a1;
+}
+
+.submit-btn {
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1025a1 0%, #0a1a7a 100%);
+}
+
+.message-input {
+    flex: 1;
+    height: 200px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.message-input:focus {
+    outline: none;
+    border-color: #1025a1;
+}
+
+.message-input::placeholder {
+    color: #999;
+}
+
+/* Loading and Error States */
+.loading-state, .error-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success and Error Messages */
+.success-message, .error-message {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-details {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .course-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .course-image {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .overview {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .opportunity {
+        height: auto;
+        min-height: 120px;
+    }
+    
+    .message {
+        flex-direction: column;
+    }
+    
+    .course-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .course-status {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+    
+    .enroll-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    
+    .loading-state, .error-state {
+      padding: 30px 15px;
+    }
+}
+
+/* Additional Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1025a1;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  color: white;
+}
